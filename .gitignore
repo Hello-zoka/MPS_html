@@ -1,0 +1,4 @@
+# Project exclude paths
+/languages/Html/classes_gen/
+/languages/Html/generator/classes_gen/
+/languages/Html.sandbox/classes_gen/
