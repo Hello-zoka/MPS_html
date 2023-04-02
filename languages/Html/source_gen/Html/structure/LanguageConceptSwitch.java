@@ -20,7 +20,8 @@ public final class LanguageConceptSwitch {
   public static final int TableHead = 8;
   public static final int TableRow = 9;
   public static final int TableTag = 10;
-  public static final int UnorderedListTag = 11;
+  public static final int TextElement = 11;
+  public static final int UnorderedListTag = 12;
 
   public LanguageConceptSwitch() {
     LanguageConceptIndexBuilder builder = new LanguageConceptIndexBuilder(0x9047bdebbe544bdaL, 0xac2865e4c26965daL);
@@ -35,6 +36,7 @@ public final class LanguageConceptSwitch {
     builder.put(0x214ad0a17bc2a839L, TableHead);
     builder.put(0x214ad0a17bc2cf8cL, TableRow);
     builder.put(0x214ad0a17bc29f5fL, TableTag);
+    builder.put(0x46aed3cb288420baL, TextElement);
     builder.put(0x214ad0a17bc22aafL, UnorderedListTag);
     myIndex = builder.seal();
   }

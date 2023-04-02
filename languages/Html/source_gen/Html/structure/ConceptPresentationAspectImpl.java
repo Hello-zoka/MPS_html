@@ -20,6 +20,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_TableHead;
   private ConceptPresentation props_TableRow;
   private ConceptPresentation props_TableTag;
+  private ConceptPresentation props_TextElement;
   private ConceptPresentation props_UnorderedListTag;
 
   @Override
@@ -103,6 +104,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_TableTag = cpb.create();
         }
         return props_TableTag;
+      case LanguageConceptSwitch.TextElement:
+        if (props_TextElement == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("Text");
+          props_TextElement = cpb.create();
+        }
+        return props_TextElement;
       case LanguageConceptSwitch.UnorderedListTag:
         if (props_UnorderedListTag == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();

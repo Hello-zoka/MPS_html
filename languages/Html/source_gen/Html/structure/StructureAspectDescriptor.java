@@ -24,6 +24,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptTableHead = createDescriptorForTableHead();
   /*package*/ final ConceptDescriptor myConceptTableRow = createDescriptorForTableRow();
   /*package*/ final ConceptDescriptor myConceptTableTag = createDescriptorForTableTag();
+  /*package*/ final ConceptDescriptor myConceptTextElement = createDescriptorForTextElement();
   /*package*/ final ConceptDescriptor myConceptUnorderedListTag = createDescriptorForUnorderedListTag();
   private final LanguageConceptSwitch myIndexSwitch;
 
@@ -39,7 +40,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptHeaderTag, myConceptHrefTag, myConceptHtmlDocument, myConceptHtmlElement, myConceptListItemTag, myConceptParagraphTag, myConceptTableBody, myConceptTableColumns, myConceptTableHead, myConceptTableRow, myConceptTableTag, myConceptUnorderedListTag);
+    return Arrays.asList(myConceptHeaderTag, myConceptHrefTag, myConceptHtmlDocument, myConceptHtmlElement, myConceptListItemTag, myConceptParagraphTag, myConceptTableBody, myConceptTableColumns, myConceptTableHead, myConceptTableRow, myConceptTableTag, myConceptTextElement, myConceptUnorderedListTag);
   }
 
   @Override
@@ -68,6 +69,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptTableRow;
       case LanguageConceptSwitch.TableTag:
         return myConceptTableTag;
+      case LanguageConceptSwitch.TextElement:
+        return myConceptTextElement;
       case LanguageConceptSwitch.UnorderedListTag:
         return myConceptUnorderedListTag;
       default:
@@ -185,6 +188,17 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.aggregate("head", 0x214ad0a17bc2c15fL).target(0x9047bdebbe544bdaL, 0xac2865e4c26965daL, 0x214ad0a17bc2a839L).optional(true).ordered(true).multiple(false).origin("2398959143512883551").done();
     b.aggregate("body", 0x214ad0a17bc2c763L).target(0x9047bdebbe544bdaL, 0xac2865e4c26965daL, 0x214ad0a17bc2bc98L).optional(true).ordered(true).multiple(false).origin("2398959143512885091").done();
     b.alias("Table");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForTextElement() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("Html", "TextElement", 0x9047bdebbe544bdaL, 0xac2865e4c26965daL, 0x46aed3cb288420baL);
+    b.class_(false, false, false);
+    // extends: Html.structure.HtmlElement
+    b.super_(0x9047bdebbe544bdaL, 0xac2865e4c26965daL, 0x214ad0a17bbcf4e6L);
+    b.origin("r:399afdf6-b352-4a0f-804f-7d424455e497(Html.structure)/5093241098114179258");
+    b.version(3);
+    b.property("content", 0x46aed3cb288429dfL).type(PrimitiveTypeId.STRING).origin("5093241098114181599").done();
+    b.alias("Text");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForUnorderedListTag() {

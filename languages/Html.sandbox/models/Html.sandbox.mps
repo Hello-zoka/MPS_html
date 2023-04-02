@@ -39,6 +39,9 @@
         <property id="2398959143512616197" name="title" index="1qX7Q$" />
         <child id="2398959143512561116" name="tags" index="1qXKlX" />
       </concept>
+      <concept id="5093241098114179258" name="Html.structure.TextElement" flags="ng" index="1IaJdL">
+        <property id="5093241098114181599" name="content" index="1IaJCk" />
+      </concept>
       <concept id="5093241098114033174" name="Html.structure.HrefTag" flags="ng" index="1IbNnt">
         <property id="5093241098114034581" name="content" index="1IbNxu" />
         <property id="5093241098114034137" name="link" index="1IbNCi" />
@@ -67,6 +70,9 @@
       <node concept="1qyfnF" id="4qIOWGCx1yE" role="1qyeuT">
         <property role="1qya2M" value="Item c" />
       </node>
+    </node>
+    <node concept="1IaJdL" id="4qIOWGCxbDs" role="1qXKlX">
+      <property role="1IaJCk" value="Simple Text" />
     </node>
     <node concept="1qy4ZY" id="4qIOWGCvr$o" role="1qXKlX">
       <node concept="1qy7yo" id="4qIOWGCvr$F" role="1qy17Y">

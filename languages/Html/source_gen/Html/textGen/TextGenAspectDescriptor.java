@@ -44,6 +44,8 @@ public class TextGenAspectDescriptor extends TextGenAspectBase {
         return new TableRow_TextGen();
       case LanguageConceptSwitch.TableTag:
         return new TableTag_TextGen();
+      case LanguageConceptSwitch.TextElement:
+        return new TextElement_TextGen();
       case LanguageConceptSwitch.UnorderedListTag:
         return new UnorderedListTag_TextGen();
     }
